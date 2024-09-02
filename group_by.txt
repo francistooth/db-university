@@ -28,11 +28,3 @@ WHERE `vote`;
 SELECT `department_id` AS `dipartimenti`, COUNT(`department_id`) as `numero_di_corsi_di_laurea`
 FROM `degrees`
 GROUP BY `department_id`;
-
-
-EXTRA
-
-SELECT d.`department_id` AS `dipartimenti`, dep.`name` AS `nome_dipartimento`, COUNT(d.`department_id`) AS `numero_di_corsi_di_laurea`
-FROM `degrees` d
-JOIN `departments` dep ON d.`department_id` = dep.`id`
-GROUP BY d.`department_id`, dep.`name`;
